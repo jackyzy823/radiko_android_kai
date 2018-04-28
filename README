@@ -1,0 +1,14 @@
+Requirements:
+0. git for patch
+1. JDK for jarsigner
+2. Apktools 2.3.2 for decompile and build
+
+Step 
+1. git clone this project
+2. download radikojp for android (6.3.6) into project folder
+3. java -jar apktools.jar d <Apk File>  -o build
+4. apply patch
+5. java -jar apktools.jar b build
+6. cd build/dist/ 
+7. keytool -genkey -keystore fake.keystore -alias fake  -storepass 123456 -dname "CN=fake" -keypass 123456  -validity 36500
+8. jarsigner -keystore fake.keystore -storepass 123456 -signedjar   <generated_apk>  <generated_signed_apk> fake
