@@ -1,0 +1,177 @@
+diff --git a/lib/armeabi-v7a/libR3AACDecoder.so b/lib/armeabi-v7a/libR3AACDecoder.so
+index 808d5703d43c2eb1dd81a974d3bf78398a2b5cc2..a5acdd6fa38cdb9819e2b2548f76a6dcc1148271 100644
+GIT binary patch
+delta 41
+vcmZqJZqxuoEsQNpEzB(}EvzkUE$l5EEu34ps#h~UY_D0(wY_FFH_HbAIxi1@
+
+delta 41
+vcmZqJZqxuoEsQNpEzB(}EvzkUE$l5EEu34ps#h}}Y_D0(wY_FFH_HbAIL{AX
+
+diff --git a/lib/armeabi-v7a/libRadikoSmartPhoneExtra.so b/lib/armeabi-v7a/libRadikoSmartPhoneExtra.so
+index e26fc66710cd08918b0cbb366d5a317334a3f852..e33fddde0b1bd1d581026910e85aa70c3455ed54 100644
+GIT binary patch
+delta 37
+tcmaFyME%7R^@bM47N!>F7M2#)7Pc1lEgaTNj79A>OdQ*7m^gJl000vz3~~Sf
+
+delta 37
+tcmaFyME%7R^@bM47N!>F7M2#)7Pc1lEgaTNjF;MNm^ilEFmdX9000+C4AKAq
+
+diff --git a/lib/armeabi/libR3AACDecoder.so b/lib/armeabi/libR3AACDecoder.so
+index b92531c03a50afe614188c92ae76c5e49c1f3137..2ba21e8b5986daade85b99d252f86ce70ae8f2ba 100644
+GIT binary patch
+delta 41
+zcmV+^0M`GUr8AtRGk}BvgaU*Egam{Iga(8Mgb0KQv<kc80i%b!;tIFC;tSyKNgxrI
+
+delta 41
+zcmV+^0M`GUr8AtRGk}BvgaU*Egam{Iga(8Mgb0KQv<kc80mFy9;tIFC;tSyKN`Mi!
+
+diff --git a/lib/armeabi/libRadikoSmartPhoneExtra.so b/lib/armeabi/libRadikoSmartPhoneExtra.so
+index d97be0a96ab55eb1080614903ad7417c1e0edb73..5e275687282702c001313f6189cabb3fbbba5105 100644
+GIT binary patch
+delta 37
+tcmcceNd3wq^@bM47N!>F7M2#)7Pc1lEgag6j2qi^7&*4<Fmh^q000f>3{C(5
+
+delta 37
+tcmcceNd3wq^@bM47N!>F7M2#)7Pc1lEgag6jDqbtj2zo_7&$dQ000LF3$6eF
+
+diff --git a/lib/x86/libR3AACDecoder.so b/lib/x86/libR3AACDecoder.so
+index 8f162b4f6ee2edf599b742337f33f8425b9dc6e8..56b1512767c8c041ddd283a5870934871276f235 100644
+GIT binary patch
+delta 45
+zcmeyd#`4D+%Z3)l7N!>F7M2#)7Pc1l7LFFq7OocVEj$5l8Kv6;-|}n^e9Nnz2>_5|
+B5TyVB
+
+delta 45
+zcmeyd#`4D+%Z3)l7N!>F7M2#)7Pc1l7LFFq7OocVEj$5l8P~K2zUA2-_?A~a69AT;
+B5jFq-
+
+diff --git a/lib/x86/libRadikoSmartPhoneExtra.so b/lib/x86/libRadikoSmartPhoneExtra.so
+index 9832df6d749021fb9b372c8a8f966156d4203243..73be707ecec6cfbacbea1f1a954c899310911902 100644
+GIT binary patch
+delta 37
+tcmZ4RO>Mz9wT2eP7N!>F7M2#)7Pc1lEgTyH8N=H*26AlQ7|5BQ2>=%&4e<Z~
+
+delta 37
+tcmZ4RO>Mz9wT2eP7N!>F7M2#)7Pc1lEgTyH8PBwD4CL6pF_1Gq696134rTxV
+
+diff --git a/smali/jp/radiko/LibBase/TimeFreeLimiterDB.smali b/smali/jp/radiko/LibBase/TimeFreeLimiterDB.smali
+index 0e5c9ca..baf851c 100644
+--- a/smali/jp/radiko/LibBase/TimeFreeLimiterDB.smali
++++ b/smali/jp/radiko/LibBase/TimeFreeLimiterDB.smali
+@@ -664,7 +664,7 @@
+ .end method
+ 
+ .method public updateRemainingTime(Ljava/lang/String;JJJ)V
+-    .locals 8
++    .locals 10
+     .param p1, "station_id"    # Ljava/lang/String;
+     .param p2, "program_start"    # J
+     .param p4, "program_end"    # J
+@@ -681,7 +681,9 @@
+     .local v0, "cv":Landroid/content/ContentValues;
+     const-string v2, "remaining_time"
+ 
+-    invoke-static {p6, p7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
++    const-wide/32 v8, 0xa4cb80
++
++    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+ 
+     move-result-object v3
+ 
+diff --git a/smali/jp/radiko/LibClient/RadikoManager.smali b/smali/jp/radiko/LibClient/RadikoManager.smali
+index fccb3ee..3ede66e 100644
+--- a/smali/jp/radiko/LibClient/RadikoManager.smali
++++ b/smali/jp/radiko/LibClient/RadikoManager.smali
+@@ -1907,11 +1907,7 @@
+     :cond_0
+     iget-wide v6, p0, Ljp/radiko/LibClient/RadikoManager;->available_time_cache:J
+ 
+-    const-wide/16 v8, 0x0
+-
+-    cmp-long v3, v6, v8
+-
+-    if-gtz v3, :cond_2
++    goto :cond_2
+ 
+     const-wide v6, 0x7fffffffffffffffL
+ 
+@@ -1949,13 +1945,12 @@
+ 
+     .line 514
+     .local v4, "viewable_end_time":J
+-    cmp-long v3, v0, v4
+ 
+-    if-gez v3, :cond_3
++    goto :cond_3
+ 
+     .end local v0    # "available_time":J
+     :goto_2
+-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
++    invoke-static {v0, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+ 
+     move-result-object v3
+ 
+diff --git a/smali/jp/radiko/Player/ActCustomSchema.smali b/smali/jp/radiko/Player/ActCustomSchema.smali
+index 26967ec..e5e7a47 100644
+--- a/smali/jp/radiko/Player/ActCustomSchema.smali
++++ b/smali/jp/radiko/Player/ActCustomSchema.smali
+@@ -261,7 +261,7 @@
+ 
+     if-eqz v0, :cond_0
+ 
+-    const/16 v0, 0x9
++    const/16 v0, 0x8
+ 
+     new-array v0, v0, [Ljava/lang/String;
+ 
+@@ -303,11 +303,6 @@
+ 
+     aput-object v2, v0, v1
+ 
+-    const/16 v1, 0x8
+-
+-    const-string v2, "android.permission.READ_EXTERNAL_STORAGE"
+-
+-    aput-object v2, v0, v1
+ 
+     :goto_0
+     sput-object v0, Ljp/radiko/Player/ActCustomSchema;->permission_list:[Ljava/lang/String;
+diff --git a/smali/jp/radiko/Player/V6FragmentAreaCheck.smali b/smali/jp/radiko/Player/V6FragmentAreaCheck.smali
+index bb308ec..4e2335a 100644
+--- a/smali/jp/radiko/Player/V6FragmentAreaCheck.smali
++++ b/smali/jp/radiko/Player/V6FragmentAreaCheck.smali
+@@ -2310,7 +2310,7 @@
+ 
+     iget-object v1, v1, Ljp/radiko/Player/ActCustomSchema;->env:Ljp/radiko/LibUtil/HelperEnvUI;
+ 
+-    const-string v2, "\u958b\u767a\u7248\u3067\u3059"
++    const-string v2, "\u9b54\u6539\u7248\u3067\u3059"
+ 
+     invoke-virtual {v1, v3, v2}, Ljp/radiko/LibUtil/HelperEnvUI;->show_toast(ZLjava/lang/String;)V
+ 
+diff --git a/smali/jp/radiko/Player/common/RadikoBuildFlavor.smali b/smali/jp/radiko/Player/common/RadikoBuildFlavor.smali
+index 4968648..c770447 100644
+--- a/smali/jp/radiko/Player/common/RadikoBuildFlavor.smali
++++ b/smali/jp/radiko/Player/common/RadikoBuildFlavor.smali
+@@ -13,7 +13,7 @@
+ 
+     .prologue
+     .line 4
+-    const/4 v0, 0x0
++    const/4 v0, 0x1
+ 
+     sput-boolean v0, Ljp/radiko/Player/common/RadikoBuildFlavor;->DEVELOPER_MODE:Z
+ 
+diff --git a/smali/jp/radiko/Player/common/RadikoMeta1.smali b/smali/jp/radiko/Player/common/RadikoMeta1.smali
+index e455d8c..e139bc2 100644
+--- a/smali/jp/radiko/Player/common/RadikoMeta1.smali
++++ b/smali/jp/radiko/Player/common/RadikoMeta1.smali
+@@ -166,7 +166,7 @@
+     iput-boolean v12, v0, Ljp/radiko/Player/common/RadikoMeta1;->use_extra_key:Z
+ 
+     .line 61
+-    const/4 v12, 0x0
++    const/4 v12, 0x1
+ 
+     move-object/from16 v0, p0
+ 
