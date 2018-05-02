@@ -6,7 +6,7 @@ BUILDTOOLDIR=$MYDIR/tool
 downloadRadiko(){
     echo "Downloading radiko original apk"
     DOWNLOADLINK=`curl -s  https://apkpure.com/radiko-jp-for-android/jp.radiko.Player/download/77-APK  |grep -oP "(?<=id=\"iframe_download\" src=\").*?(?=\")"`
-    if [-z $DOWNLOADLINK];then
+    if [ $DOWNLOADLINK ];then
         wget -O $BUILDTOOLDIR/src.apk -nc $DOWNLOADLINK || exit 1
     else
         exit 1
@@ -15,20 +15,20 @@ downloadRadiko(){
 
 downloadApktool(){
     echo "Downloading Apktool"
-    wget -P $BUILDTOOLDIRi -nc https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.3.2.jar || exit 1
+    wget -P $BUILDTOOLDIR -nc https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.3.2.jar || exit 1
 }
 
 
 echo "Using " $BUILDTOOLDIR " for apktool and radiko original android apk"
-if [! -x "$BUILDTOOLDIR"];then
+if [ ! -x "$BUILDTOOLDIR" ];then
     mkdir $BUILDTOOLDIR
     downloadRadiko
     downloadApktool
 else
-    if [! -a $BUILDTOOLDIR/src.apk] || [ `md5sum $BUILDTOOLDIR/src.apk |awk '{print $1}'` -eq '5331083aef76176cc668b181b87b750d' ] ;then
+    if [ ! -a $BUILDTOOLDIR/src.apk ] || [ `md5sum $BUILDTOOLDIR/src.apk |awk '{print $1}'` -eq '5331083aef76176cc668b181b87b750d' ] ;then
         downloadRadiko
     fi
-    if [! -a $BUILDTOOLDIR/apktool_2.3.2.jar ] || [ `md5sum $BUILDTOOLDIR/apktool_2.3.2.jar |awk '{print $1}'` -eq '953ed8a553becac4e713d1073912f15f'];then
+    if [ ! -a $BUILDTOOLDIR/apktool_2.3.2.jar ] || [ `md5sum $BUILDTOOLDIR/apktool_2.3.2.jar |awk '{print $1}'` -eq '953ed8a553becac4e713d1073912f15f' ];then
         downloadApktool
     fi
 fi
