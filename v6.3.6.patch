@@ -124,38 +124,135 @@ index 0e5c9ca..baf851c 100644
      move-result-object v3
  
 diff --git a/smali/jp/radiko/LibClient/RadikoManager.smali b/smali/jp/radiko/LibClient/RadikoManager.smali
-index fccb3ee..3ede66e 100644
+index fccb3ee..b639daa 100644
 --- a/smali/jp/radiko/LibClient/RadikoManager.smali
 +++ b/smali/jp/radiko/LibClient/RadikoManager.smali
-@@ -1907,11 +1907,7 @@
-     :cond_0
-     iget-wide v6, p0, Ljp/radiko/LibClient/RadikoManager;->available_time_cache:J
+@@ -1856,116 +1856,27 @@
+ .end method
  
+ .method public getTimefreeLimiterAvailable(JJ)Ljava/lang/Long;
+-    .locals 11
++    .locals 7
+     .param p1, "listen_start"    # J
+     .param p3, "program_start"    # J
+ 
+     .prologue
+-    .line 502
+-    iget-wide v6, p0, Ljp/radiko/LibClient/RadikoManager;->available_time_cache:J
+-
+-    const-wide/high16 v8, -0x8000000000000000L
+-
+-    cmp-long v3, v6, v8
+-
+-    if-nez v3, :cond_0
+-
+-    .line 503
+-    iget-object v3, p0, Ljp/radiko/LibClient/RadikoManager;->background:Ljp/radiko/LibClient/RadikoUIBackground;
+-
+-    iget-object v3, v3, Ljp/radiko/LibClient/RadikoUIBackground;->app_meta:Ljp/radiko/LibBase/RadikoMeta;
+-
+-    invoke-virtual {p0}, Ljp/radiko/LibClient/RadikoManager;->getAreaAuthResult()Ljp/radiko/LibBase/AreaAuthResult;
+-
+-    move-result-object v6
+-
+-    invoke-virtual {v6}, Ljp/radiko/LibBase/AreaAuthResult;->getConfig()Ljp/radiko/LibBase/RadikoServiceConfig;
+-
+-    move-result-object v6
+-
+-    const-string v7, "available_time_of_timefree"
+-
+-    invoke-virtual {v6, v7}, Ljp/radiko/LibBase/RadikoServiceConfig;->get1(Ljava/lang/String;)Ljava/lang/String;
+-
+-    move-result-object v6
+-
+-    invoke-virtual {v3, v6}, Ljp/radiko/LibBase/RadikoMeta;->getAvailableTime(Ljava/lang/String;)I
+-
+-    move-result v2
+-
+-    .line 505
+-    .local v2, "iv":I
+-    if-gtz v2, :cond_1
+-
+-    const-wide/16 v6, 0x0
+-
+-    :goto_0
+-    iput-wide v6, p0, Ljp/radiko/LibClient/RadikoManager;->available_time_cache:J
+-
+-    .line 508
+-    .end local v2    # "iv":I
+-    :cond_0
+-    iget-wide v6, p0, Ljp/radiko/LibClient/RadikoManager;->available_time_cache:J
+-
 -    const-wide/16 v8, 0x0
 -
 -    cmp-long v3, v6, v8
 -
 -    if-gtz v3, :cond_2
-+    goto :cond_2
+-
+-    const-wide v6, 0x7fffffffffffffffL
+-
+-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+-
+-    move-result-object v3
+-
+-    .line 514
+-    :goto_1
+-    return-object v3
+-
+-    .line 505
+-    .restart local v2    # "iv":I
+-    :cond_1
+-    int-to-long v6, v2
+-
+-    goto :goto_0
+-
+-    .line 511
+-    .end local v2    # "iv":I
+-    :cond_2
+-    iget-wide v6, p0, Ljp/radiko/LibClient/RadikoManager;->available_time_cache:J
+-
+-    add-long v0, p1, v6
+-
+-    .line 513
+-    .local v0, "available_time":J
++    .line 502 
+     invoke-static {p3, p4}, Ljp/radiko/LibBase/RadikoTime;->floorDate(J)J
  
-     const-wide v6, 0x7fffffffffffffffL
+-    move-result-wide v6
+-
+-    const-wide/32 v8, 0x2932dc18
++    move-result-wide v2
  
-@@ -1949,13 +1945,12 @@
+-    add-long v4, v6, v8
++    const-wide/32 v4, 0x2932dc18
  
-     .line 514
-     .local v4, "viewable_end_time":J
+-    .line 514
+-    .local v4, "viewable_end_time":J
 -    cmp-long v3, v0, v4
++    add-long v0, v2, v4
  
 -    if-gez v3, :cond_3
-+    goto :cond_3
+-
+-    .end local v0    # "available_time":J
+-    :goto_2
++    .line 503
++    .local v0, "viewable_end_time":J
+     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
  
-     .end local v0    # "available_time":J
-     :goto_2
--    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-+    invoke-static {v0, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+-    move-result-object v3
+-
+-    goto :goto_1
+-
+-    .restart local v0    # "available_time":J
+-    :cond_3
+-    move-wide v0, v4
++    move-result-object v2
  
-     move-result-object v3
+-    goto :goto_2
++    return-object v2
+ .end method
  
+ .method public getTimefreeLimiterRemain(J)Ljava/lang/Long;
 diff --git a/smali/jp/radiko/Player/ActCustomSchema.smali b/smali/jp/radiko/Player/ActCustomSchema.smali
 index 26967ec..49c2b1b 100644
 --- a/smali/jp/radiko/Player/ActCustomSchema.smali
