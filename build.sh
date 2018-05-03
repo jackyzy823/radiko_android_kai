@@ -43,7 +43,7 @@ git apply --stat $MYDIR/v6.3.6.patch
 git apply $MYDIR/v6.3.6.patch
 echo "Compiling && Packaging && Signing"
 java -jar $BUILDTOOLDIR/apktool_2.3.2.jar b $BUILDDIR
-cd $BUILDDIR/dist && keytool -genkey -keystore fake.keystore -alias fake  -storepass 123456 -dname "CN=fake" -keypass 123456  -validity 36500 && jarsigner -keystore fake.keystore -storepass 123456 -signedjar $MYDIR/radiko_kai_6.3.6.apk src.apk fake 
+cd $BUILDDIR/dist && keytool -genkey -keystore fake.jks -keyalg RSA -keysize 2048 -alias fake  -storepass 123456 -dname "CN=fake" -keypass 123456  -validity 36500 && jarsigner -keystore fake.jks -digestalg SHA1 -sigalg SHA1withRSA -storepass 123456 -signedjar $MYDIR/radiko_kai_6.3.6.apk src.apk fake 
 echo "Removing tmp directory" $BUILDDIR
 rm -r $BUILDDIR
 echo "Result is " $MYDIR/radiko_kai_6.3.6.apk
