@@ -664,10 +664,38 @@ index bb308ec..c514359 100644
      invoke-virtual {v1, v3, v2}, Ljp/radiko/LibUtil/HelperEnvUI;->show_toast(ZLjava/lang/String;)V
  
 diff --git a/smali/jp/radiko/Player/common/LocationChecker.smali b/smali/jp/radiko/Player/common/LocationChecker.smali
-index 7be8b66..d8069b8 100644
+index 7be8b66..1bc3b6b 100644
 --- a/smali/jp/radiko/Player/common/LocationChecker.smali
 +++ b/smali/jp/radiko/Player/common/LocationChecker.smali
-@@ -316,7 +316,7 @@
+@@ -135,7 +135,7 @@
+     sput-object v0, Ljp/radiko/Player/common/LocationChecker;->log:Ljp/radiko/LibUtil/LogCategory;
+ 
+     .line 369
+-    const/4 v0, 0x4
++    const/4 v0, 0x2
+ 
+     new-array v0, v0, [Ljava/lang/String;
+ 
+@@ -151,18 +151,6 @@
+ 
+     aput-object v2, v0, v1
+ 
+-    const/4 v1, 0x2
+-
+-    const-string v2, "android.permission.ACCESS_FINE_LOCATION"
+-
+-    aput-object v2, v0, v1
+-
+-    const/4 v1, 0x3
+-
+-    const-string v2, "android.permission.ACCESS_COARSE_LOCATION"
+-
+-    aput-object v2, v0, v1
+-
+     sput-object v0, Ljp/radiko/Player/common/LocationChecker;->permission_list:[Ljava/lang/String;
+ 
+     return-void
+@@ -316,7 +304,7 @@
  
      .line 768
      .local v2, "hasLocationProviderNetwork":Z
@@ -676,7 +704,7 @@ index 7be8b66..d8069b8 100644
  
      .line 771
      .end local v1    # "hasLocationProviderGPS":Z
-@@ -334,7 +334,7 @@
+@@ -334,7 +322,7 @@
      invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
  
      .line 771
