@@ -12,3 +12,6 @@ Step
 6. cd build/dist/ 
 7. keytool -genkey -keystore fake.keystore -alias fake  -storepass 123456 -dname "CN=fake" -keypass 123456  -validity 36500
 8. jarsigner -keystore fake.keystore -storepass 123456 -signedjar   <generated_apk>  <generated_signed_apk> fake
+
+Bounus:Automatic dynamic library patcher
+see parser.py
