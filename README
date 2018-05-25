@@ -5,7 +5,7 @@ Requirements:
 
 Step 
 1. git clone this project
-2. download radikojp for android (6.3.6) into project folder
+2. download radikojp for android (6.3.7) into project folder
 3. java -jar apktools.jar d <Apk File>  -o build
 4. apply patch
 5. java -jar apktools.jar b build
@@ -13,5 +13,5 @@ Step
 7. keytool -genkey -keystore fake.keystore -alias fake  -storepass 123456 -dname "CN=fake" -keypass 123456  -validity 36500
 8. jarsigner -keystore fake.keystore -storepass 123456 -signedjar   <generated_apk>  <generated_signed_apk> fake
 
-Bounus:Automatic dynamic library patcher
+Bonus:Automatic radiko android dynamic library patcher
 see parser.py

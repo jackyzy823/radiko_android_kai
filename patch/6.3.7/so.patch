@@ -1,0 +1,56 @@
+diff --git a/lib/armeabi/libR3AACDecoder.so b/lib/armeabi/libR3AACDecoder.so
+index 1579d7a7f2e60c1b4f62d4780e6632ef56969893..6b076ef33ddd375352d09c79f50ba59a8a2aaa67 100644
+GIT binary patch
+delta 41
+xcmaE}#Q4n;<AxT-7N!>F7M2#)7Pc1l7LFFqEnMA?7}vM=JmT8k^N9PwdjMR=5wQRO
+
+delta 41
+xcmaE}#Q4n;<AxT-7N!>F7M2#)7Pc1l7LFFqEnMA?7|*x&JmT8k^N9PwdjMW15zznu
+
+diff --git a/lib/armeabi/libRadikoSmartPhoneExtra.so b/lib/armeabi/libRadikoSmartPhoneExtra.so
+index 06850479d50569f5d8c6b9338fcf58d06499eacb..98ac4cea4fa845421a4e1a69c9ca26990a4d560b 100644
+GIT binary patch
+delta 34
+qcmZ4TNPWp8^@bM47N!>F7M2#)7Pc1lDIC8UKeqni*!qW4;{yQovkrFv
+
+delta 34
+qcmZ4TNPWp8^@bM47N!>F7M2#)7Pc1lDIC8U16%)aZ2iNj@c{tv6Ajk@
+
+diff --git a/lib/armeabi-v7a/libR3AACDecoder.so b/lib/armeabi-v7a/libR3AACDecoder.so
+index 96794e3dc868f72b84478b2b49c392452bb210a5..75b17a91442b9892cdb4b0ff02050dcbb03ffba2 100644
+GIT binary patch
+delta 41
+vcmZqJZqxuoEsQNpEzB(}EvzkUE$l5EEu34ps#h~gwAZZW+FrAoo8<!lF^mqj
+
+delta 41
+vcmZqJZqxuoEsQNpEzB(}EvzkUE$l5EEu34ps#h~wwAZZW+FrAoo8<!lGVBi4
+
+diff --git a/lib/armeabi-v7a/libRadikoSmartPhoneExtra.so b/lib/armeabi-v7a/libRadikoSmartPhoneExtra.so
+index 0b1280702d2cad69afa7f56591db8623cf5da6d4..138a54fffa07eab3469e62e6b7f941c29f070380 100644
+GIT binary patch
+delta 37
+tcmX@{ME%4Q^@bM47N!>F7M2#)7Pc1lEgaHJj1BEFOdQ)~m^gJl000MM3*Z0%
+
+delta 37
+tcmX@{ME%4Q^@bM47N!>F7M2#)7Pc1lEgaHJj1Ssnm^ik}FmdX9000Yw3_t(?
+
+diff --git a/lib/x86/libR3AACDecoder.so b/lib/x86/libR3AACDecoder.so
+index 1adaaa15e3cad14e590d1ce8d4cd16000f943c55..4061dc09fd5e987e3afecd95b95822d04837c3ae 100644
+GIT binary patch
+delta 45
+zcmeyd#`4D+%Z3)l7N!>F7M2#)7Pc1l7LFFq7OocVEj$5l8P(eZ-|}n^e9Nnz2>_7i
+B5U~IN
+
+delta 45
+zcmeyd#`4D+%Z3)l7N!>F7M2#)7Pc1l7LFFq7OocVEj$5l8K<-dzUA2-_?A~a69AQ#
+B5gq^l
+
+diff --git a/lib/x86/libRadikoSmartPhoneExtra.so b/lib/x86/libRadikoSmartPhoneExtra.so
+index 10e43c0584fefc9247e4575e8c9b15be38b86c86..2ada69a1c7abe999e98395095fa8a6568a802cf1 100644
+GIT binary patch
+delta 37
+rcmZqprq%#NEsQNpEzB(}EvzkUE$mx3CIm8Sw@(b@*gi3kGd~jm2;L1P
+
+delta 37
+rcmZqprq%#NEsQNpEzB(}EvzkUE$mx3CIm9BX`dL#v3+77XMQFC4rvXh
+
