@@ -34,10 +34,10 @@ if [ ! -x "$BUILDTOOLDIR" ];then
     downloadRadiko
     downloadApktool
 else
-    if [ ! -f $BUILDTOOLDIR/src-v$VERSIONNAME.apk -o `md5sum $BUILDTOOLDIR/src-v$VERSIONNAME.apk |awk '{print $1}'` != '93fd37e15699ec94fd659e778b5a0ea4' ] ;then
+    if [[ ! -f $BUILDTOOLDIR/src-v$VERSIONNAME.apk ]] || [[ `md5sum $BUILDTOOLDIR/src-v$VERSIONNAME.apk |awk '{print $1}'` != '93fd37e15699ec94fd659e778b5a0ea4' ]] ;then
         downloadRadiko
     fi
-    if [ ! -f $BUILDTOOLDIR/apktool_2.3.2.jar -o `md5sum $BUILDTOOLDIR/apktool_2.3.2.jar |awk '{print $1}'` !=  '953ed8a553becac4e713d1073912f15f' ];then
+    if [[ ! -f $BUILDTOOLDIR/apktool_2.3.2.jar ]] || [[  `md5sum $BUILDTOOLDIR/apktool_2.3.2.jar |awk '{print $1}'` !=  '953ed8a553becac4e713d1073912f15f' ]];then
         downloadApktool
     fi
 fi
