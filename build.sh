@@ -1,12 +1,13 @@
 VERSIONCODE="78"
 VERSIONNAME="6.3.7"
+VERSIONSHA1="f20860ec42ef8e8fa0e80bdfebd07239acda52ba"
 CURDIR=`pwd`
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Script is in the" $MYDIR
 BUILDTOOLDIR=$MYDIR/tool
 #
-# 77 -> 6.3.6 5331083aef76176cc668b181b87b750d
-# 78 -> 6.3.7 93fd37e15699ec94fd659e778b5a0ea4
+# 77 -> 6.3.6 03145e09e79d72cf27ea00437f1c872cae858b78
+# 78 -> 6.3.7 f20860ec42ef8e8fa0e80bdfebd07239acda52ba
 #
 #
 # if stable use latest valid version
@@ -34,7 +35,7 @@ if [ ! -x "$BUILDTOOLDIR" ];then
     downloadRadiko
     downloadApktool
 else
-    if [[ ! -f $BUILDTOOLDIR/src-v$VERSIONNAME.apk ]] || [[ `md5sum $BUILDTOOLDIR/src-v$VERSIONNAME.apk |awk '{print $1}'` != '93fd37e15699ec94fd659e778b5a0ea4' ]] ;then
+    if [[ ! -f $BUILDTOOLDIR/src-v$VERSIONNAME.apk ]] || [[ `md5sum $BUILDTOOLDIR/src-v$VERSIONNAME.apk |awk '{print $1}'` != $VERSIONSHA1  ]] ;then
         downloadRadiko
     fi
     if [[ ! -f $BUILDTOOLDIR/apktool_2.3.2.jar ]] || [[  `md5sum $BUILDTOOLDIR/apktool_2.3.2.jar |awk '{print $1}'` !=  '953ed8a553becac4e713d1073912f15f' ]];then
