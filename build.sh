@@ -1,6 +1,6 @@
-VERSIONCODE="78"
-VERSIONNAME="6.3.7"
-VERSIONSHA1="f20860ec42ef8e8fa0e80bdfebd07239acda52ba"
+VERSIONCODE="79"
+VERSIONNAME="6.3.8"
+VERSIONSHA1="0d25c492cd7d12b59feb01331bdf437dc393e16c"
 CURDIR=`pwd`
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Script is in the" $MYDIR
