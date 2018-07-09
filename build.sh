@@ -1,6 +1,6 @@
-VERSIONCODE="79"
-VERSIONNAME="6.3.8"
-VERSIONSHA1="0d25c492cd7d12b59feb01331bdf437dc393e16c"
+VERSIONCODE="80"
+VERSIONNAME="6.4.0"
+VERSIONSHA1="4a84001d584eeeff5f72480a0810de450e280446"
 CURDIR=`pwd`
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "Script is in the" $MYDIR
@@ -8,7 +8,7 @@ BUILDTOOLDIR=$MYDIR/tool
 #
 # 77 -> 6.3.6 03145e09e79d72cf27ea00437f1c872cae858b78
 # 78 -> 6.3.7 f20860ec42ef8e8fa0e80bdfebd07239acda52ba
-#
+# 79 -> 6.3.8 0d25c492cd7d12b59feb01331bdf437dc393e16c
 #
 # if stable use latest valid version
 # else check update first if update available :  use parser to generate so.patch and use previous version smali.patch if specified file not changed.

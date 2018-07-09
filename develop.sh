@@ -1,7 +1,7 @@
-PREVVER="6.3.7"
-PREVCODE="78"
-CURVER="6.3.8"
-CURCODE="79"
+PREVVER="6.3.8"
+PREVCODE="79"
+CURVER="6.4.0"
+CURCODE="80"
 
 #
 # Check if smali patch can be reused.
@@ -48,7 +48,8 @@ function work(){
         done
 } 
 
-#work $1
-#git diff --binary 
+#cp -r lib lib_kai
+#work libkai
+#git diff --binary lib lib_kai |sed  "s/lib_kai/lib/g"
 #then change patch to  a/lib b/lib
 

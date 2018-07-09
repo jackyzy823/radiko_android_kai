@@ -1,0 +1,56 @@
+diff --git a/lib/armeabi/libR3AACDecoder.so b/lib/armeabi/libR3AACDecoder.so
+index 22237978638a16b5d6c1dfd400f71f17fca7df00..e0c736e93a393c90c7bd1ffb0da1ce3fef6a8b19 100644
+GIT binary patch
+delta 41
+xcmcb!#Q4q<<AxT-7N!>F7M2#)7Pc1l7LFFqEnL-)7}eWr9&v52dBpwTJpfQY5ZM3#
+
+delta 41
+xcmcb!#Q4q<<AxT-7N!>F7M2#)7Pc1l7LFFqEnL-)7}?uv9&v52dBpwTJpfMM5V-&V
+
+diff --git a/lib/armeabi/libRadikoSmartPhoneExtra.so b/lib/armeabi/libRadikoSmartPhoneExtra.so
+index 82a59e34ea7535367fa94569d9015b473707068c..a6acb37d2254836d6df720ee6511a025397089cd 100644
+GIT binary patch
+delta 34
+qcmZp9q~7vKy`hD%g{g(Pg{6hHg{_5s3de266|HwTw%*~?_y7RtLJf`p
+
+delta 34
+qcmZp9q~7vKy`hD%g{g(Pg{6hHg{_5s3de0mkJdXJTkmjcd;kFC;tehU
+
+diff --git a/lib/armeabi-v7a/libR3AACDecoder.so b/lib/armeabi-v7a/libR3AACDecoder.so
+index d3fb27fd5ccb090b07803b44c8411c4d5992e1a0..beb82674fccb38566bb946a6f24464a2788508da 100644
+GIT binary patch
+delta 41
+xcmcbx&FI25qlOm77N!>F7M2#)7Pc1l7LFFqEnMEK8BezRtmfM8vznXb0{~1)4|M<l
+
+delta 41
+xcmcbx&FI25qlOm77N!>F7M2#)7Pc1l7LFFqEnMEK8DF;htmfM8vznXb0{~5`50wA_
+
+diff --git a/lib/armeabi-v7a/libRadikoSmartPhoneExtra.so b/lib/armeabi-v7a/libRadikoSmartPhoneExtra.so
+index 0126f732fe1c3d7faff8cdf314e5d89706cbfdfc..7ad864796f2936ac6d93c9331ca50f226dcc4b87 100644
+GIT binary patch
+delta 37
+tcmdn-M198-^@bM47N!>F7M2#)7Pc1lEgalTjECBJm^ilcFmdX9000CE3(^1p
+
+delta 37
+tcmdn-M198-^@bM47N!>F7M2#)7Pc1lEgalTjEmZNm^ilcFmdX9000823$g$J
+
+diff --git a/lib/x86/libR3AACDecoder.so b/lib/x86/libR3AACDecoder.so
+index 2005cb031671ebadede96d91b659a3d6f93ab01c..db0266ecfe37df1e3fcd10fce2bb6fa6021ab30d 100644
+GIT binary patch
+delta 45
+zcmX@H#`44(%Z3)l7N!>F7M2#)7Pc1l7LFFq7OocVEj$Wu8AaO_-|}o%e9Nnz2>^PL
+B53c|K
+
+delta 45
+zcmX@H#`44(%Z3)l7N!>F7M2#)7Pc1l7LFFq7OocVEj$Wu8K<->zUA4j_?A~a699k)
+B5H0`!
+
+diff --git a/lib/x86/libRadikoSmartPhoneExtra.so b/lib/x86/libRadikoSmartPhoneExtra.so
+index 696608e1837e30d094adcc745e7f652c9b8bbd09..7affe0f5ec97f7e65fd6ed7496ba82bc63c2d250 100644
+GIT binary patch
+delta 37
+tcmezHRqex9wT2eP7N!>F7M2#)7Pc1lEgTJjjMLj2139)g26E<S0stzF4nF_@
+
+delta 37
+scmezHRqex9wT2eP7N!>F7M2#)7Pc1lEgTJjj3(`kfgIZ#13B|E0VYfh+yDRo
+
